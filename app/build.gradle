@@ -1,0 +1,58 @@
+repositories {
+    mavenCentral()
+}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.getkeepsafe.dexcount'
+apply plugin: 'android-apt'
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "cn.edu.jumy.girls"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+dependencies {
+    /*base adapter lib*/
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    /*mvp lib*/
+    compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
+    compile 'com.hannesdorfmann.mosby:viewstate:2.0.1'
+    /*rx-android-java*/
+    compile 'io.reactivex:rxjava:+'
+    compile 'io.reactivex:rxandroid:+'
+    compile 'com.squareup.retrofit:adapter-rxjava:+'
+    compile 'com.trello:rxlifecycle:+'
+    compile 'com.trello:rxlifecycle-components:+'
+    /*rotrofit*/
+    compile 'com.squareup.retrofit2:retrofit:2.+'
+    compile 'com.squareup.retrofit2:converter-gson:+'
+    compile 'com.squareup.retrofit2:adapter-rxjava:+'
+    compile 'com.google.code.gson:gson:+'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    //logcat
+    compile 'com.orhanobut:logger:1.15'
+
+
+    compile 'org.jetbrains.anko:anko-sdk15:+'
+    compile ('org.jetbrains.anko:anko-appcompat-v7:+'){
+        exclude module: 'anko-common'
+    }
+    compile ('org.jetbrains.anko:anko-recyclerview-v7:+'){
+        exclude module: 'anko-common'
+    }
+}
