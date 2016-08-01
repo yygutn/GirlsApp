@@ -1,0 +1,98 @@
+<root>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt java.util.concurrent.Future&lt;R&gt; asyncResult(T, java.util.concurrent.ExecutorService, kotlin.jvm.functions.Function1&lt;? super org.jetbrains.anko.AnkoAsyncContext&lt;T&gt;,? extends R&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt void forEachReversed(T[], kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt java.util.concurrent.Future&lt;R&gt; asyncResult(T, kotlin.jvm.functions.Function1&lt;? super org.jetbrains.anko.AnkoAsyncContext&lt;T&gt;,? extends R&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt void onUiThread(android.app.Fragment, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt java.util.concurrent.Future&lt;kotlin.Unit&gt; async(T, java.util.concurrent.ExecutorService, kotlin.jvm.functions.Function1&lt;? super org.jetbrains.anko.AnkoAsyncContext&lt;T&gt;,kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt void forEachReversed(java.util.List&lt;? extends T&gt;, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt T style(T, kotlin.jvm.functions.Function1&lt;? super android.view.View,kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt java.util.concurrent.Future&lt;R&gt; asyncResult(T, kotlin.jvm.functions.Function1&lt;? super org.jetbrains.anko.AnkoAsyncContext&lt;T&gt;,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt java.util.concurrent.Future&lt;kotlin.Unit&gt; async(T, java.util.concurrent.ExecutorService, kotlin.jvm.functions.Function1&lt;? super org.jetbrains.anko.AnkoAsyncContext&lt;T&gt;,kotlin.Unit&gt;) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt T style(T, kotlin.jvm.functions.Function1&lt;? super android.view.View,kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt java.util.concurrent.Future&lt;R&gt; asyncResult(T, java.util.concurrent.ExecutorService, kotlin.jvm.functions.Function1&lt;? super org.jetbrains.anko.AnkoAsyncContext&lt;T&gt;,? extends R&gt;) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt void forEachReversed(T[], kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.content.Context, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt java.util.concurrent.Future&lt;R&gt; asyncResult(T, java.util.concurrent.ExecutorService, kotlin.jvm.functions.Function1&lt;? super org.jetbrains.anko.AnkoAsyncContext&lt;T&gt;,? extends R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt java.util.concurrent.Future&lt;kotlin.Unit&gt; async(T, kotlin.jvm.functions.Function1&lt;? super org.jetbrains.anko.AnkoAsyncContext&lt;T&gt;,kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt void onUiThread(android.content.Context, kotlin.jvm.functions.Function1&lt;? super android.content.Context,kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt void onUiThread(android.app.Fragment, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.view.ViewManager, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt void forEachReversed(java.util.List&lt;? extends T&gt;, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.CustomKt T ankoView(android.app.Activity, kotlin.jvm.functions.Function1&lt;? super android.content.Context,? extends T&gt;, int, kotlin.jvm.functions.Function1&lt;? super T,kotlin.Unit&gt;) 3'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt T style(T, kotlin.jvm.functions.Function1&lt;? super android.view.View,kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt java.util.concurrent.Future&lt;kotlin.Unit&gt; async(T, java.util.concurrent.ExecutorService, kotlin.jvm.functions.Function1&lt;? super org.jetbrains.anko.AnkoAsyncContext&lt;T&gt;,kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.jetbrains.anko.custom.DeprecatedKt java.util.concurrent.Future&lt;kotlin.Unit&gt; async(T, kotlin.jvm.functions.Function1&lt;? super org.jetbrains.anko.AnkoAsyncContext&lt;T&gt;,kotlin.Unit&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

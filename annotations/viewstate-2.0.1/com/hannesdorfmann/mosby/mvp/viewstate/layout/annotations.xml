@@ -1,0 +1,26 @@
+<root>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.layout.MvpViewStateRelativeLayout void setViewState(com.hannesdorfmann.mosby.mvp.viewstate.ViewState) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.layout.ViewStateSavedState CREATOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.layout.MvpViewStateFrameLayout void setViewState(com.hannesdorfmann.mosby.mvp.viewstate.ViewState) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.layout.MvpViewStateLinearLayout void setViewState(com.hannesdorfmann.mosby.mvp.viewstate.ViewState) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.layout.ViewStateSavedState void writeToParcel(android.os.Parcel, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

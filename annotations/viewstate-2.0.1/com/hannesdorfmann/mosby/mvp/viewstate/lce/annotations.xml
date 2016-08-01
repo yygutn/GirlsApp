@@ -1,0 +1,29 @@
+<root>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.AbsParcelableLceViewState void saveInstanceState(android.os.Bundle) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.AbsParcelableLceViewState KEY_BUNDLE_VIEW_STATE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.AbsParcelableLceViewState void writeToParcel(android.os.Parcel, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.MvpLceViewStateFragment void setViewState(com.hannesdorfmann.mosby.mvp.viewstate.ViewState&lt;V&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.MvpLceViewStateActivity void setViewState(com.hannesdorfmann.mosby.mvp.viewstate.ViewState&lt;V&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.AbsParcelableLceViewState void readFromParcel(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.AbsParcelableLceViewState boolean readBoolean(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.AbsParcelableLceViewState void writeBoolean(android.os.Parcel, boolean) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

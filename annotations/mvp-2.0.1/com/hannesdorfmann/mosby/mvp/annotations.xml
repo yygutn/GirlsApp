@@ -1,0 +1,26 @@
+<root>
+    <item name='com.hannesdorfmann.mosby.mvp.BuildConfig VERSION_NAME'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.MvpFragment V getMvpView()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.MvpFragment void onViewCreated(android.view.View, android.os.Bundle) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.MvpActivity V getMvpView()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.BuildConfig APPLICATION_ID'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.BuildConfig FLAVOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.BuildConfig BUILD_TYPE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

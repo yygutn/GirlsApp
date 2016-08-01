@@ -1,0 +1,29 @@
+<root>
+    <item name='com.hannesdorfmann.mosby.mvp.lce.LceAnimator void showContent(android.view.View, android.view.View, android.view.View) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.lce.LceAnimator int dpToPx(android.content.Context, float) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.lce.LceAnimator void showLoading(android.view.View, android.view.View, android.view.View) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.lce.LceAnimator void showLoading(android.view.View, android.view.View, android.view.View) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.lce.LceAnimator void showContent(android.view.View, android.view.View, android.view.View) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.lce.LceAnimator void showContent(android.view.View, android.view.View, android.view.View) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.lce.LceAnimator void showErrorView(android.view.View, android.view.View, android.view.View) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.lce.MvpLceFragment void onViewCreated(android.view.View, android.os.Bundle) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.lce.LceAnimator void showLoading(android.view.View, android.view.View, android.view.View) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

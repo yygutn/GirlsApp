@@ -1,0 +1,32 @@
+<root>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.BuildConfig APPLICATION_ID'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.BuildConfig VERSION_NAME'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.RestorableViewState void saveInstanceState(android.os.Bundle) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.MvpViewStateFragment void setViewState(com.hannesdorfmann.mosby.mvp.viewstate.ViewState&lt;V&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.MvpViewStateActivity void setViewState(com.hannesdorfmann.mosby.mvp.viewstate.ViewState&lt;V&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.BuildConfig FLAVOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.BuildConfig BUILD_TYPE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

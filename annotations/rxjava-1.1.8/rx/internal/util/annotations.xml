@@ -1,0 +1,155 @@
+<root>
+    <item name='rx.internal.util.ActionNotificationObserver void onError(java.lang.Throwable) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils IS_EMPTY'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.ExceptionsUtils boolean isTerminated(java.util.concurrent.atomic.AtomicReference&lt;java.lang.Throwable&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.RxRingBuffer SPMC_POOL'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.OpenHashSet boolean add(T) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils OBJECT_EQUALS'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils rx.functions.Func0&lt;rx.observables.ConnectableObservable&lt;T&gt;&gt; createReplaySupplier(rx.Observable&lt;T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils rx.functions.Func0&lt;rx.observables.ConnectableObservable&lt;T&gt;&gt; createReplaySupplier(rx.Observable&lt;T&gt;, int, long, java.util.concurrent.TimeUnit, rx.Scheduler)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils rx.functions.Func2&lt;R,T,R&gt; createCollectorCaller(rx.functions.Action2&lt;R,? super T&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.RxRingBuffer java.lang.Throwable asError(java.lang.Object) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.ActionNotificationObserver void onNext(T) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils rx.functions.Func0&lt;rx.observables.ConnectableObservable&lt;T&gt;&gt; createReplaySupplier(rx.Observable&lt;T&gt;, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils rx.functions.Func1&lt;rx.Observable&lt;? extends rx.Notification&lt;?&gt;&gt;,rx.Observable&lt;?&gt;&gt; createRetryDematerializer(rx.functions.Func1&lt;? super rx.Observable&lt;? extends java.lang.Throwable&gt;,? extends rx.Observable&lt;?&gt;&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.ObserverSubscriber void onNext(T) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils TO_ARRAY'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.SubscriptionList void add(rx.Subscription) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.RxThreadFactory NONE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils rx.functions.Func1&lt;java.lang.Object,java.lang.Boolean&gt; equalsWith(java.lang.Object)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.ActionSubscriber void onNext(T) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='rx.internal.util.RxRingBuffer boolean accept(java.lang.Object, rx.Observer) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.RxRingBuffer SPSC_POOL'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils rx.functions.Func0&lt;rx.observables.ConnectableObservable&lt;T&gt;&gt; createReplaySupplier(rx.Observable&lt;T&gt;, long, java.util.concurrent.TimeUnit, rx.Scheduler)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.OpenHashSet boolean remove(T) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.RxRingBuffer rx.internal.util.RxRingBuffer getSpscInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils COUNTER'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.RxThreadFactory java.lang.Thread newThread(java.lang.Runnable)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.UtilityFunctions rx.functions.Func1&lt;T,T&gt; identity()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils rx.functions.Func1&lt;rx.Observable&lt;? extends rx.Notification&lt;?&gt;&gt;,rx.Observable&lt;?&gt;&gt; createRepeatDematerializer(rx.functions.Func1&lt;? super rx.Observable&lt;? extends java.lang.Void&gt;,? extends rx.Observable&lt;?&gt;&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.ScalarSynchronousSingle rx.internal.util.ScalarSynchronousSingle&lt;T&gt; create(T)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils rx.functions.Func1&lt;rx.Observable&lt;T&gt;,rx.Observable&lt;R&gt;&gt; createReplaySelectorAndObserveOn(rx.functions.Func1&lt;? super rx.Observable&lt;T&gt;,? extends rx.Observable&lt;R&gt;&gt;, rx.Scheduler)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.ActionSubscriber void onError(java.lang.Throwable) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='rx.internal.util.ObjectPool T createObject()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='rx.internal.util.UtilityFunctions rx.functions.Func1&lt;? super T,java.lang.Boolean&gt; alwaysTrue()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils rx.functions.Func1&lt;java.lang.Object,java.lang.Boolean&gt; isInstanceOf(java.lang.Class&lt;?&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils ERROR_NOT_IMPLEMENTED'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.ExceptionsUtils java.lang.Throwable terminate(java.util.concurrent.atomic.AtomicReference&lt;java.lang.Throwable&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.InternalObservableUtils LONG_COUNTER'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.RxRingBuffer rx.internal.util.RxRingBuffer getSpmcInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.ScalarSynchronousObservable rx.internal.util.ScalarSynchronousObservable&lt;T&gt; create(T)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.BlockingUtils void awaitForComplete(java.util.concurrent.CountDownLatch, rx.Subscription) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.SynchronizedQueue java.lang.Object clone()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.UtilityFunctions rx.functions.Func1&lt;? super T,java.lang.Boolean&gt; alwaysFalse()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.internal.util.ObserverSubscriber void onError(java.lang.Throwable) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='rx.internal.util.ExceptionsUtils boolean addThrowable(java.util.concurrent.atomic.AtomicReference&lt;java.lang.Throwable&gt;, java.lang.Throwable) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

@@ -1,0 +1,38 @@
+<root>
+    <item name='rx.plugins.RxJavaSchedulersHook rx.Scheduler createComputationScheduler()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.plugins.RxJavaSchedulersHook rx.Scheduler createComputationScheduler(java.util.concurrent.ThreadFactory) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.plugins.RxJavaSchedulersHook rx.Scheduler createNewThreadScheduler(java.util.concurrent.ThreadFactory) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.plugins.RxJavaSchedulersHook rx.Scheduler createNewThreadScheduler()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.plugins.RxJavaSchedulersHook rx.Scheduler createIoScheduler()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.plugins.RxJavaSchedulersHook rx.Scheduler createComputationScheduler(java.util.concurrent.ThreadFactory)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.plugins.RxJavaSchedulersHook rx.plugins.RxJavaSchedulersHook getDefaultInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.plugins.RxJavaSchedulersHook rx.Scheduler createIoScheduler(java.util.concurrent.ThreadFactory)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.plugins.RxJavaPlugins rx.plugins.RxJavaPlugins getInstance()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.plugins.RxJavaSchedulersHook rx.Scheduler createIoScheduler(java.util.concurrent.ThreadFactory) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.plugins.RxJavaSchedulersHook rx.Scheduler createNewThreadScheduler(java.util.concurrent.ThreadFactory)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='rx.plugins.RxJavaErrorHandler ERROR_IN_RENDERING_SUFFIX'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

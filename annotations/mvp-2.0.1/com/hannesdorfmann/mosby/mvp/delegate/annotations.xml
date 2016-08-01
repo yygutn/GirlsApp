@@ -1,0 +1,29 @@
+<root>
+    <item name='com.hannesdorfmann.mosby.mvp.delegate.FragmentMvpDelegateImpl void onViewCreated(android.view.View, android.os.Bundle) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.delegate.FragmentMvpDelegateImpl FragmentMvpDelegateImpl(com.hannesdorfmann.mosby.mvp.delegate.BaseMvpDelegateCallback&lt;V,P&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.delegate.FragmentMvpDelegate void onViewCreated(android.view.View, android.os.Bundle) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.delegate.ViewGroupMvpDelegateImpl ViewGroupMvpDelegateImpl(com.hannesdorfmann.mosby.mvp.delegate.BaseMvpDelegateCallback&lt;V,P&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.delegate.BaseMvpDelegateCallback V getMvpView()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.delegate.ActivityMvpDelegateImpl ActivityMvpDelegateImpl(com.hannesdorfmann.mosby.mvp.delegate.ActivityMvpDelegateCallback&lt;V,P&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

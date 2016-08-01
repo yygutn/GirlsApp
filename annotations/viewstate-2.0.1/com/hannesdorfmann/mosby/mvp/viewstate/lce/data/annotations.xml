@@ -1,0 +1,41 @@
+<root>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.CastedArrayListLceViewState void readFromParcel(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.ArrayListLceViewState CREATOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.ArrayListLceViewState void readFromParcel(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.CastedArrayListLceViewState void writeToParcel(android.os.Parcel, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.ParcelableDataLceViewState void writeToParcel(android.os.Parcel, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.SerializeableLceViewState CREATOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.CastedArrayListLceViewState CREATOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.SerializeableLceViewState void readFromParcel(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.ArrayListLceViewState void writeToParcel(android.os.Parcel, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.CastedArrayListLceViewState CastedArrayListLceViewState(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.ParcelableDataLceViewState void readFromParcel(android.os.Parcel) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.SerializeableLceViewState void writeToParcel(android.os.Parcel, int) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.viewstate.lce.data.ParcelableDataLceViewState CREATOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

@@ -1,0 +1,140 @@
+<root>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindUntilActivityEvent(rx.Observable&lt;com.trello.rxlifecycle.ActivityEvent&gt;, com.trello.rxlifecycle.ActivityEvent) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.FragmentEvent CREATE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.BuildConfig APPLICATION_ID'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.LifecycleTransformer rx.Single.Transformer&lt;T,T&gt; forSingle()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindView(android.view.View) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindUntilFragmentEvent(rx.Observable&lt;com.trello.rxlifecycle.FragmentEvent&gt;, com.trello.rxlifecycle.FragmentEvent)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bind(rx.Observable&lt;R&gt;, rx.functions.Func1&lt;R,R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.FragmentEvent DETACH'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.FragmentEvent CREATE_VIEW'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.BuildConfig BUILD_TYPE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.FragmentEvent RESUME'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.ActivityEvent DESTROY'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bind(rx.Observable&lt;R&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bind(rx.Observable&lt;R&gt;, rx.functions.Func1&lt;R,R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindActivity(rx.Observable&lt;com.trello.rxlifecycle.ActivityEvent&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindUntilEvent(rx.Observable&lt;R&gt;, R)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindUntilFragmentEvent(rx.Observable&lt;com.trello.rxlifecycle.FragmentEvent&gt;, com.trello.rxlifecycle.FragmentEvent) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.ActivityEvent PAUSE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.FragmentEvent STOP'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindFragment(rx.Observable&lt;com.trello.rxlifecycle.FragmentEvent&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.LifecycleTransformer rx.Completable.CompletableTransformer forCompletable()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+        <annotation name='org.jetbrains.kannotator.runtime.annotations.Propagated'>
+            <val name="value" val="{org.jetbrains.kannotator.controlFlow.builder.analysis.NullabilityKey.class}"/>
+        </annotation>
+    </item>
+    <item name='com.trello.rxlifecycle.ActivityEvent STOP'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.ActivityEvent START'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.ActivityEvent RESUME'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.BuildConfig FLAVOR'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.ActivityEvent CREATE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindUntilActivityEvent(rx.Observable&lt;com.trello.rxlifecycle.ActivityEvent&gt;, com.trello.rxlifecycle.ActivityEvent) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindFragment(rx.Observable&lt;com.trello.rxlifecycle.FragmentEvent&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindUntilActivityEvent(rx.Observable&lt;com.trello.rxlifecycle.ActivityEvent&gt;, com.trello.rxlifecycle.ActivityEvent)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bind(rx.Observable&lt;R&gt;, rx.functions.Func1&lt;R,R&gt;) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.FragmentEvent DESTROY'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindView(rx.Observable&lt;? extends E&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindView(rx.Observable&lt;? extends E&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindUntilEvent(rx.Observable&lt;R&gt;, R) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindUntilEvent(rx.Observable&lt;R&gt;, R) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.FragmentEvent DESTROY_VIEW'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindUntilFragmentEvent(rx.Observable&lt;com.trello.rxlifecycle.FragmentEvent&gt;, com.trello.rxlifecycle.FragmentEvent) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.FragmentEvent ATTACH'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.FragmentEvent PAUSE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.BuildConfig VERSION_NAME'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.FragmentEvent START'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindActivity(rx.Observable&lt;com.trello.rxlifecycle.ActivityEvent&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bind(rx.Observable&lt;R&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.trello.rxlifecycle.RxLifecycle com.trello.rxlifecycle.LifecycleTransformer&lt;T&gt; bindView(android.view.View)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

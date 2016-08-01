@@ -1,0 +1,11 @@
+<root>
+    <item name='com.hannesdorfmann.mosby.mvp.layout.MvpFrameLayout V getMvpView()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.layout.MvpRelativeLayout V getMvpView()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.hannesdorfmann.mosby.mvp.layout.MvpLinearLayout V getMvpView()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>
