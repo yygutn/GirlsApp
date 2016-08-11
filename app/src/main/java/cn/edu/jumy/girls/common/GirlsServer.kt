@@ -12,12 +12,16 @@ import rx.Observable
  * Copyright (c) 2016, yygutn@gmail.com All Rights Reserved.
  */
 interface GirlsServer {
-    @GET("/data/福利/{pagesize}/{page}")
-    fun getPrettyGirlData(@Path("pagesize") pagesize: Int, @Path("page") page: Int): Observable<GirlsData>
+    @GET("data/福利/{pagesize}/{page}")
+    fun getPrettyGirlData(@Path("pagesize") pagesize: Int,
+                          @Path("page") page: Int): Observable<GirlsData>
 
-    @GET("/data/休息视频/{pagesize}/{page}")
-    fun get休息视频Data(@Path("pagesize") pagesize: Int, @Path("page") page: Int): Observable<休息视频Data>
+    @GET("data/休息视频/{pagesize}/{page}")
+    fun get休息视频Data(@Path("pagesize") pagesize: Int,
+                    @Path("page") page: Int): Observable<休息视频Data>
 
-    @GET("/day/{year}/{month}/{day}")
-    fun getGankData(@Path("year") year: Int, @Path("month") month: Int, @Path("day") day: Int): Observable<GankData>
+    @GET("day/{year}/{month}/{day}")
+    fun getGankData(@Path("year") year: Int,
+                    @Path("month") month: Int,
+                    @Path("day") day: Int): Observable<GankData>
 }

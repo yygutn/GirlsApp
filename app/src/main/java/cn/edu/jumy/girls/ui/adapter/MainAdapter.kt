@@ -5,6 +5,7 @@ import android.graphics.ColorFilter
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
 import android.text.TextUtils
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import cn.edu.jumy.girls.R
@@ -53,12 +54,16 @@ class MainAdapter : MultiItemTypeAdapter<Gank> {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        var itemView:View
         if (viewType == EItemType.ITEM_TYPE_GIRL.ordinal) {
-            return ViewHolder.Companion.createViewHolder(mContext, parent, R.layout.gank_item_girl)
+            itemView = LayoutInflater.from(mContext).inflate(R.layout.gank_item_girl,null)
+            return ViewHolder.createViewHolder(mContext, itemView)
         } else if (viewType == EItemType.ITEM_TYPE_CATEGOTY.ordinal) {
-            return ViewHolder.Companion.createViewHolder(mContext, parent, R.layout.gank_item_category)
+            itemView = LayoutInflater.from(mContext).inflate(R.layout.gank_item_category,null)
+            return ViewHolder.createViewHolder(mContext, itemView)
         } else {
-            return ViewHolder.Companion.createViewHolder(mContext, parent, R.layout.gank_item_normal)
+            itemView = LayoutInflater.from(mContext).inflate(R.layout.gank_item_normal,null)
+            return ViewHolder.createViewHolder(mContext, itemView)
         }
     }
 
@@ -71,7 +76,7 @@ class MainAdapter : MultiItemTypeAdapter<Gank> {
         if (viewType == EItemType.ITEM_TYPE_GIRL.ordinal) {
             val img: RatioImageView = holder.getView<RatioImageView>(R.id.iv_index_photo);
             img.setOriginalSize(200, 100)
-            holder.setText(R.id.tv_video_name, DateUtil.toDate(item.publishedAt))
+            holder.setText(R.id.tv_video_name, DateUtil.toDate(item.publishedAt!!))
             Picasso.with(mContext)
                     .load(item.url)
                     .into(img, object : Callback {

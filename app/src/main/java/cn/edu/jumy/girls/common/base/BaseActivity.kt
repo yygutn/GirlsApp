@@ -31,7 +31,7 @@ open class BaseActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    public fun Activity.showToast(string: String) {
+    fun Activity.showToast(string: String) {
         Toast.makeText(this, string, Toast.LENGTH_SHORT).show()
     }
 

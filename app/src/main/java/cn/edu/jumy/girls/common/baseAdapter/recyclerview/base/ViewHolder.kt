@@ -20,7 +20,7 @@ import android.widget.ProgressBar
 import android.widget.RatingBar
 import android.widget.TextView
 
-class ViewHolder(private val mContext: Context, val convertView: View) : RecyclerView.ViewHolder(convertView) {
+class ViewHolder(var mContext: Context, var convertView: View) : RecyclerView.ViewHolder(convertView) {
     private val mViews: SparseArray<View>
 
     init {
@@ -213,14 +213,13 @@ class ViewHolder(private val mContext: Context, val convertView: View) : Recycle
 
 
         fun createViewHolder(context: Context, itemView: View): ViewHolder {
-            val holder = cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ViewHolder(context, itemView)
+            val holder = ViewHolder(context, itemView)
             return holder
         }
 
         fun createViewHolder(context: Context, parent: ViewGroup, layoutId: Int): ViewHolder {
-            val itemView = LayoutInflater.from(context).inflate(layoutId, parent,
-                    false)
-            val holder = cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ViewHolder(context, itemView)
+            val itemView = LayoutInflater.from(context).inflate(layoutId, parent,false)
+            val holder = ViewHolder(context, itemView)
             return holder
         }
     }

@@ -1,5 +1,6 @@
 package cn.edu.jumy.girls.common
 
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
@@ -12,28 +13,18 @@ import java.util.concurrent.TimeUnit
  */
 class GirlsRetrofit {
     companion object {
-        private var monitor = Any()
         val HOST = "http://gank.io/api/"
-        var instance: GirlsRetrofit
-        get() {
-            synchronized(monitor){
-                if (instance == null){
-                    instance = GirlsRetrofit()
-                }
-                return instance
-            }
-        }
-        init {
-            instance = GirlsRetrofit()
-        }
+        var instance: GirlsRetrofit = GirlsRetrofit()
     }
 
 
-    var mService: GirlsServer
-    var retrofit: Retrofit
+    lateinit var mService: GirlsServer
+    lateinit var retrofit: Retrofit
 
     constructor() {
-        val client: OkHttpClient  = OkHttpClient.Builder().readTimeout(21,TimeUnit.SECONDS).build()
+        val client: OkHttpClient  = OkHttpClient.Builder()
+                .readTimeout(21,TimeUnit.SECONDS)
+                .build()
         retrofit = Retrofit.Builder()
                 .baseUrl(HOST)
                 .client(client)

@@ -24,9 +24,9 @@ class GirlsApp : Application() {
         mContext = this
         //debug模式下输出日志，否则不输出
         if (BuildConfig.DEBUG) {
-            Logger.init("").hideThreadInfo().methodOffset(0)
+            Logger.init("Jumy").hideThreadInfo().methodOffset(0)
         } else {
-            Logger.init("").logLevel(LogLevel.NONE)
+            Logger.init("Release").logLevel(LogLevel.NONE)
         }
     }
 

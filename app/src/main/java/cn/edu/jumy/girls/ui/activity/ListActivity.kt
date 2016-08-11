@@ -12,6 +12,7 @@ import cn.edu.jumy.girls.data.entity.Girl
 import cn.edu.jumy.girls.presenter.ListPresenter
 import cn.edu.jumy.girls.ui.adapter.ListAdapter
 import cn.edu.jumy.girls.ui.view.ListViewView
+import cn.edu.jumy.girls.util.DateUtil
 import kotlinx.android.synthetic.main.activity_view_list.*
 import java.util.*
 
@@ -24,12 +25,13 @@ class ListActivity:BaseRefreshMvpActivity<ListViewView<Girl>,ListPresenter>(),Li
 
     private var mAdapter: ListAdapter = ListAdapter(mContext,R.layout.index_item, ArrayList())
     private var mHasMoreData = true
-
+    override fun getLayout(): Int {
+        return R.layout.activity_view_list
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_list)
         setTitle("妹子们",true)
-
+        initRecycleView()
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
@@ -99,7 +101,7 @@ class ListActivity:BaseRefreshMvpActivity<ListViewView<Girl>,ListPresenter>(),Li
             gank.type = clickGirl.type
             gank.url = clickGirl.url
             gank.publishedAt = clickGirl.publishedAt
-//            GirlFaceActivity.gotoWatchGirlDetail(this, gank.url, DateUtil.toDate(gank.publishedAt), viewImage, viewText)
+            GirlDetailActivity.gotoGirlDetail(this, gank.url, DateUtil.toDate(gank.publishedAt!!), view, textView)
         }
     }
 }

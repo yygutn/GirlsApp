@@ -54,9 +54,9 @@ class AndroidUtils {
             theme.resolveAttribute(R.attr.colorPrimary, typedValue, true)
             return typedValue.data
         }
-
-        val isAndroidL: Boolean
-            get() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
+        fun isAndroidL():Boolean{
+            return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
+        }
 
         /**
          * base on Toolbar get the TitleView by reflect way

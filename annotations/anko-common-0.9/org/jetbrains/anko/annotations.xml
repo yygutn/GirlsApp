@@ -257,7 +257,7 @@
     <item name='org.jetbrains.anko.BuildSpannedKt void appendln(android.text.SpannableStringBuilder, java.lang.CharSequence, java.lang.Object) 0'>
         <annotation name='org.jetbrains.annotations.NotNull'/>
     </item>
-    <item name='org.jetbrains.anko.AnkoContextKt android.view.View setContentView(org.jetbrains.anko.AnkoComponent&lt;T&gt;, T) 0'>
+    <item name='org.jetbrains.anko.AnkoContextKt android.view.View viewBinding(org.jetbrains.anko.AnkoComponent&lt;T&gt;, T) 0'>
         <annotation name='org.jetbrains.annotations.NotNull'/>
     </item>
     <item name='org.jetbrains.anko.AlertDialogBuilder void noButton$default(org.jetbrains.anko.AlertDialogBuilder, kotlin.jvm.functions.Function1, int, java.lang.Object) 0'>
@@ -290,7 +290,7 @@
     <item name='org.jetbrains.anko.ContextUtilsKt boolean getLandscape(android.content.res.Configuration) 0'>
         <annotation name='org.jetbrains.annotations.NotNull'/>
     </item>
-    <item name='org.jetbrains.anko.AnkoContextKt android.view.View setContentView(org.jetbrains.anko.AnkoComponent&lt;T&gt;, T) 1'>
+    <item name='org.jetbrains.anko.AnkoContextKt android.view.View viewBinding(org.jetbrains.anko.AnkoComponent&lt;T&gt;, T) 1'>
         <annotation name='org.jetbrains.annotations.NotNull'/>
     </item>
     <item name='org.jetbrains.anko.DialogsKt org.jetbrains.anko.AlertDialogBuilder alert$default(org.jetbrains.anko.AnkoContext, java.lang.String, java.lang.String, kotlin.jvm.functions.Function1, int, java.lang.Object) 0'>
@@ -1529,7 +1529,7 @@
     <item name='org.jetbrains.anko.RelativeLayoutLayoutParamsHelpersKt void leftOf(android.widget.RelativeLayout.LayoutParams, int) 0'>
         <annotation name='org.jetbrains.annotations.NotNull'/>
     </item>
-    <item name='org.jetbrains.anko.AnkoContextKt android.view.View setContentView(org.jetbrains.anko.AnkoComponent&lt;T&gt;, T)'>
+    <item name='org.jetbrains.anko.AnkoContextKt android.view.View viewBinding(org.jetbrains.anko.AnkoComponent&lt;T&gt;, T)'>
         <annotation name='org.jetbrains.annotations.NotNull'/>
     </item>
     <item name='org.jetbrains.anko.BuildSpannedKt void appendln(android.text.SpannableStringBuilder, java.lang.CharSequence, java.lang.Object...) 1'>

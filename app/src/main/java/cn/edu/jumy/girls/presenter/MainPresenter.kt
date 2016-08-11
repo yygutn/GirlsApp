@@ -7,10 +7,18 @@ import cn.edu.jumy.girls.data.entity.Gank
 import cn.edu.jumy.girls.ui.view.MainView
 import cn.edu.jumy.girls.util.AndroidUtils
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter
+import com.orhanobut.logger.Logger
+import rx.Observable
+import rx.Scheduler
 import rx.Subscriber
 import rx.android.schedulers.AndroidSchedulers
 import rx.functions.Func1
+import rx.lang.kotlin.observable
+import rx.lang.kotlin.toObservable
+import rx.schedulers.Schedulers
+import rx.subscriptions.CompositeSubscription
 import java.util.*
+import kotlin.concurrent.thread
 
 /**
  * Created by Jumy on 16/8/11 13:26.
@@ -21,6 +29,8 @@ class MainPresenter : MvpBasePresenter<MainView<Gank>> {
         val DAY_OF_MILLISECOND = 24 * 60 * 60 * 1000;
         val mService = GirlsRetrofit.instance.mService
     }
+
+    private var subscriptions = CompositeSubscription()
 
     var mContext: Context
 
@@ -57,32 +67,29 @@ class MainPresenter : MvpBasePresenter<MainView<Gank>> {
         val month = calendar.get(Calendar.MONTH) + 1
         val day = calendar.get(Calendar.DAY_OF_MONTH)
         mService.getGankData(year, month, day)
-                .observeOn(AndroidSchedulers.mainThread())
-                .map(Func1<GankData, GankData.Result> { gankData ->
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(Schedulers.newThread())
+                .map { gankData ->
                     gankData.results
-                })
-                .map(Func1<GankData.Result, ArrayList<Gank>> { result ->
+                }
+                .map { result ->
                     addAllResults(result)
-                })
-                .subscribe(object : Subscriber<ArrayList<Gank>>() {
-                    override fun onCompleted() {
-                        // after get data complete, need put off time one day
-                        mCurrentDate = Date(date.time - DAY_OF_MILLISECOND)
+                }
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ list ->
+                    // some day the data will be return empty like sunday, so we need get after day data
+                    if (list.isEmpty()) {
+                        getData(Date(date.time - DAY_OF_MILLISECOND))
+                    } else {
+                        mCountOfGetMoreDataEmpty = 0
+                        view?.fillData(list)
                     }
-
-                    override fun onError(e: Throwable) {
-                    }
-
-                    override fun onNext(list: ArrayList<Gank>) {
-                        // some day the data will be return empty like sunday, so we need get after day data
-                        if (list.isEmpty()) {
-                            getData(Date(date.time - DAY_OF_MILLISECOND))
-                        } else {
-                            mCountOfGetMoreDataEmpty = 0
-                            view?.fillData(list)
-                        }
-                        view?.getDataFinish()
-                    }
+                    view?.getDataFinish()
+                }, { e ->
+                    Logger.e(e.toString())
+                    view?.getDataFinish()
+                }, {
+                    mCurrentDate = Date(date.time - DAY_OF_MILLISECOND)
                 })
     }
 
@@ -93,45 +100,40 @@ class MainPresenter : MvpBasePresenter<MainView<Gank>> {
         val month = calendar.get(Calendar.MONTH) + 1
         val day = calendar.get(Calendar.DAY_OF_MONTH)
         mService.getGankData(year, month, day)
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(Schedulers.newThread())
                 .map(Func1<GankData, GankData.Result> { gankData ->
                     gankData.results
                 })
                 .map(Func1<GankData.Result, ArrayList<Gank>> { result ->
                     addAllResults(result)
                 })
-                .subscribe(object : Subscriber<ArrayList<Gank>>() {
-                    override fun onCompleted() {
-                        // after get data complete, need put off time one day
-                        mCurrentDate = Date(mCurrentDate.time - DAY_OF_MILLISECOND)
-                        // now user has execute getMoreData so this flag will be set true
-                        //and now when user pull down list we would not refill data
-                        hasLoadMoreData = true
-                    }
-
-                    override fun onError(e: Throwable) {
-
-                    }
-
-                    override fun onNext(list: ArrayList<Gank>) {
-                        //when this day is weekend , the list will return empty(weekend has not gank info,the editors need rest)
-                        if (list.isEmpty()) {
-                            //record count of empty day
-                            mCountOfGetMoreDataEmpty += 1
-                            //if empty day is more than five,it indicate has no more data to show
-                            if (mCountOfGetMoreDataEmpty >= 5) {
-                                view?.hasNoMoreData()
-                            } else {
-                                // we need look forward data
-                                getDataMore()
-                            }
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ list ->
+                    //when this day is weekend , the list will return empty(weekend has not gank info,the editors need rest)
+                    if (list.isEmpty()) {
+                        //record count of empty day
+                        mCountOfGetMoreDataEmpty += 1
+                        //if empty day is more than five,it indicate has no more data to show
+                        if (mCountOfGetMoreDataEmpty >= 5) {
+                            view?.hasNoMoreData()
                         } else {
-                            mCountOfGetMoreDataEmpty = 0
-                            view?.appendMoreDataToView(list)
+                            // we need look forward data
+                            getDataMore()
                         }
-                        view?.getDataFinish()
+                    } else {
+                        mCountOfGetMoreDataEmpty = 0
+                        view?.appendMoreDataToView(list)
                     }
+                    view?.getDataFinish()
+                }, {
+                    // after get data complete, need put off time one day
+                    mCurrentDate = Date(mCurrentDate.time - DAY_OF_MILLISECOND)
+                    // now user has execute getMoreData so this flag will be set true
+                    //and now when user pull down list we would not refill data
+                    hasLoadMoreData = true
                 })
+
     }
 
     private fun addAllResults(results: GankData.Result): ArrayList<Gank> {

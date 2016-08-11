@@ -13,7 +13,6 @@ import cn.edu.jumy.girls.data.entity.Girl
 import cn.edu.jumy.girls.ui.widget.RatioImageView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.gank_item_girl.*
 import java.util.*
 
 /**

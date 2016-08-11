@@ -28,17 +28,19 @@ import cn.edu.jumy.girls.R
 import cn.edu.jumy.girls.data.entity.Gank
 
 
-object StringStyleUtils {
+class StringStyleUtils {
 
-    fun format(context: Context, text: String, style: Int): SpannableString {
-        val spannableString = SpannableString(text)
-        spannableString.setSpan(TextAppearanceSpan(context, style), 0, text.length, 0)
-        return spannableString
-    }
+    companion object{
+        fun format(context: Context, text: String, style: Int): SpannableString {
+            val spannableString = SpannableString(text)
+            spannableString.setSpan(TextAppearanceSpan(context, style), 0, text.length, 0)
+            return spannableString
+        }
 
-    fun getGankInfoSequence(context: Context, mGank: Gank): CharSequence {
-        val builder = SpannableStringBuilder(mGank.desc).append(
-                StringStyleUtils.format(context, " (via. " + mGank.who + ")", R.style.ViaTextAppearance))
-        return builder.subSequence(0, builder.length)
+        fun getGankInfoSequence(context: Context, mGank: Gank): CharSequence {
+            val builder = SpannableStringBuilder(mGank.desc).append(
+                    StringStyleUtils.format(context, " (via. " + mGank.who + ")", R.style.ViaTextAppearance))
+            return builder.subSequence(0, builder.length)
+        }
     }
 }

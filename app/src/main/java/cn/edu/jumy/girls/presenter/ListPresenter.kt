@@ -3,18 +3,16 @@ package cn.edu.jumy.girls.presenter
 import android.content.Context
 import cn.edu.jumy.girls.common.GirlsRetrofit
 import cn.edu.jumy.girls.data.GirlsData
-import cn.edu.jumy.girls.data.entity.Gank
 import cn.edu.jumy.girls.data.entity.Girl
-import cn.edu.jumy.girls.data.entity.Soul
 import cn.edu.jumy.girls.data.休息视频Data
 import cn.edu.jumy.girls.ui.view.ListViewView
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter
+import com.orhanobut.logger.Logger
 import rx.Observable
-import rx.Subscriber
-import rx.Subscription
 import rx.android.schedulers.AndroidSchedulers
 import rx.functions.Func1
 import rx.functions.Func2
+import rx.schedulers.Schedulers
 import java.util.*
 
 /**
@@ -56,6 +54,8 @@ class ListPresenter : MvpBasePresenter<ListViewView<Girl>> {
                 Func2<GirlsData, 休息视频Data, GirlsData> { girlsdata, 休息视频data ->
                     createGirlInfoWith休息视频(girlsdata, 休息视频data)
                 })
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(Schedulers.newThread())
                 .map(Func1<GirlsData, ArrayList<Girl>> { girlsData ->
                     girlsData.results
                 })
@@ -66,31 +66,21 @@ class ListPresenter : MvpBasePresenter<ListViewView<Girl>> {
                     girl2.publishedAt!!.compareTo(girl.publishedAt!!)
                 })
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe {
-                    (object : Subscriber<ArrayList<Girl>>() {
-                        override fun onNext(girls: ArrayList<Girl>?) {
-                            if (girls!!.isEmpty()) {
-                                view?.hasNoMoreData()
-                            } else if (girls.size < PAGE_SIZE) {
-                                view?.appendMoreDataToView(girls)
-                                view?.hasNoMoreData()
-                            } else if (girls.size == PAGE_SIZE) {
-                                view?.appendMoreDataToView(girls)
-                                mCurrentPage++
-                            }
-                            view?.getDataFinish()
-                        }
-
-                        override fun onCompleted() {
-                        }
-
-                        override fun onError(e: Throwable?) {
-                            view?.showErrorView(e!!)
-                            view?.getDataFinish()
-                        }
-
-                    })
-                }
+                .subscribe({ girls ->
+                    if (girls!!.isEmpty()) {
+                        view?.hasNoMoreData()
+                    } else if (girls.size < PAGE_SIZE) {
+                        view?.appendMoreDataToView(girls as ArrayList<Girl>)
+                        view?.hasNoMoreData()
+                    } else if (girls.size == PAGE_SIZE) {
+                        view?.appendMoreDataToView(girls as ArrayList<Girl>)
+                        mCurrentPage++
+                    }
+                    view?.getDataFinish()
+                }, { e ->
+                    view?.showErrorView(e!!)
+                    view?.getDataFinish()
+                })
     }
 
     fun getDataMore() {
@@ -100,41 +90,36 @@ class ListPresenter : MvpBasePresenter<ListViewView<Girl>> {
                 Func2<GirlsData, 休息视频Data, GirlsData> { girlsData, 休息视频data ->
                     createGirlInfoWith休息视频(girlsData, 休息视频data)
                 })
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(Schedulers.newThread())
                 .map(Func1<GirlsData, ArrayList<Girl>> { girlsData ->
                     girlsData.results
                 })
                 .flatMap(Func1<ArrayList<Girl>, Observable<Girl>> { girls ->
                     Observable.from(girls)
                 })
-                .toSortedList(Func2 { girl1, girl2 ->
+                .toSortedList(Func2<Girl, Girl, Int> { girl1, girl2 ->
                     girl2.publishedAt?.compareTo(girl1.publishedAt)
                 })
-                .subscribe {
-                    (object : Subscriber<ArrayList<Girl>>() {
-                        override fun onNext(girls: ArrayList<Girl>?) {
-                            if (girls!!.isEmpty()) {
-                                view?.hasNoMoreData()
-                            } else if (girls.size < PAGE_SIZE) {
-                                view?.appendMoreDataToView(girls)
-                                view?.hasNoMoreData()
-                            } else if (girls.size == PAGE_SIZE) {
-                                view?.appendMoreDataToView(girls)
-                                mCurrentPage++
-                            }
-                            view?.getDataFinish()
-                        }
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ girls ->
+                    if (girls!!.isEmpty()) {
+                        view?.hasNoMoreData()
+                    } else if (girls.size < PAGE_SIZE) {
+                        view?.appendMoreDataToView(girls as ArrayList<Girl>)
+                        view?.hasNoMoreData()
+                    } else if (girls.size == PAGE_SIZE) {
+                        view?.appendMoreDataToView(girls as ArrayList<Girl>)
+                        mCurrentPage++
+                    }
+                    view?.getDataFinish()
+                }, { e ->
+                    Logger.e(e.toString())
+                    view?.showErrorView(e)
+                    view?.getDataFinish()
+                }, {
 
-                        override fun onCompleted() {
-
-                        }
-
-                        override fun onError(e: Throwable) {
-                            view?.showErrorView(e)
-                            view?.getDataFinish()
-                        }
-                    })
-                }
-
+                })
     }
 
     private fun createGirlInfoWith休息视频(girlData: GirlsData, data: 休息视频Data): GirlsData {

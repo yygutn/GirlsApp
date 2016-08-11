@@ -24,36 +24,39 @@ import android.support.v4.app.FragmentManager
 import android.support.v7.app.AlertDialog
 
 import cn.edu.jumy.girls.R
+import cn.edu.jumy.girls.presenter.DialogPresenter
 
 
 /**
  * tool for dialog
  * Created by mao on 7/19/15.
  */
-object DialogUtil {
-    /**
-     * show a dialog which it contain one point message only
-     * @param context context
-     */
-    fun showSinglePointDialog(context: Context, message: String) {
-        AlertDialog.Builder(context).setTitle("提示").setMessage(message).setPositiveButton("确定", null).show()
-    }
+class DialogUtil {
+    companion object {
+        /**
+         * show a dialog which it contain one point message only
+         * @param context context
+         */
+        fun showSinglePointDialog(context: Context, message: String) {
+            AlertDialog.Builder(context).setTitle("提示").setMessage(message).setPositiveButton("确定", null).show()
+        }
 
 
-    /**
-     * show a custom dialog use a local html file
-     * @param context
-     * *
-     * @param fragmentManager
-     * *
-     * @param dialogTitle title
-     * *
-     * @param htmlFileName file name
-     * *
-     * @param tag
-     */
-    fun showCustomDialog(context: Context, fragmentManager: FragmentManager, dialogTitle: String, htmlFileName: String, tag: String) {
-        val accentColor = AndroidUtils.getAccentColor(context)
-//        CustomDialogPresenter.create(dialogTitle, htmlFileName, accentColor).show(fragmentManager, tag)
+        /**
+         * show a custom dialog use a local html file
+         * @param context
+         * *
+         * @param fragmentManager
+         * *
+         * @param dialogTitle title
+         * *
+         * @param htmlFileName file name
+         * *
+         * @param tag
+         */
+        fun showCustomDialog(context: Context, fragmentManager: FragmentManager, dialogTitle: String, htmlFileName: String, tag: String) {
+            val accentColor = AndroidUtils.getAccentColor(context)
+            DialogPresenter.create(dialogTitle, htmlFileName, accentColor).show(fragmentManager, tag)
+        }
     }
 }

@@ -7,6 +7,8 @@ import android.os.Handler
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.Toolbar
+import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import butterknife.BindView
@@ -17,22 +19,34 @@ import cn.edu.jumy.girls.data.entity.Gank
 import cn.edu.jumy.girls.presenter.MainPresenter
 import cn.edu.jumy.girls.ui.adapter.MainAdapter
 import cn.edu.jumy.girls.ui.view.MainView
+import cn.edu.jumy.girls.util.DateUtil
 import cn.edu.jumy.girls.util.DialogUtil
 import java.util.*
 
 class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(),MainAdapter.IClickMainItem,MainView<Gank> {
 
 
-
     private var mHasMoreData = true
-    private var mAdapter:MainAdapter? = null
     private var mList: ArrayList<Gank> = ArrayList()
+    private var mAdapter:MainAdapter = MainAdapter(this,mList)
+
+    private lateinit var mListView: RecyclerView
+
+    override fun getLayout(): Int {
+        return R.layout.activity_main
+    }
+
+    override fun viewBinding() {
+        super.viewBinding()
+        mListView = findViewById(R.id.mListView) as RecyclerView
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        ButterKnife.bind(this)
+        initRecycleView()
         setTitle(getString(R.string.app_name), false)
-        presenter.checkVersionInfo()
+        getPresenter().checkVersionInfo()
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
@@ -58,7 +72,7 @@ class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(),Mai
 
 
     override fun prepareRefresh(): Boolean {
-        return presenter.shouldRefillData()
+        return getPresenter().shouldRefillData()
     }
 
     override fun getMenuRes(): Int {
@@ -66,7 +80,7 @@ class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(),Mai
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.getItemId()) {
+        when (item?.itemId) {
             R.id.action_view_list -> startActivity(Intent(this, ListActivity::class.java))
             R.id.action_github_tending -> {
                 val url = getString(R.string.url_github_yygutn)
@@ -86,22 +100,21 @@ class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(),Mai
     }
 
     private fun getData() {
-        presenter.getData(Date(System.currentTimeMillis()))
+        getPresenter().getData(Date(System.currentTimeMillis()))
     }
     private fun initRecycleView() {
         val layoutManager = LinearLayoutManager(this)
-        mListView.setLayoutManager(layoutManager)
-        mAdapter = MainAdapter(this,mList)
-        mAdapter?.setIClickItem(this)
-        mListView.setAdapter(mAdapter)
+        mListView.layoutManager = layoutManager
+        mAdapter.setIClickItem(this)
+        mListView.adapter = mAdapter
 
         mListView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                val isBottom = layoutManager.findLastCompletelyVisibleItemPosition() >= mAdapter!!.getItemCount() - 4
+                val isBottom = layoutManager.findLastCompletelyVisibleItemPosition() >= mAdapter.itemCount - 4
                 if (!mSwipeRefreshLayout.isRefreshing && isBottom && mHasMoreData) {
                     showRefresh()
-                    presenter.getDataMore()
+                    getPresenter().getDataMore()
                 } else if (!mHasMoreData) {
                     hasNoMoreData()
                 }
@@ -110,25 +123,26 @@ class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(),Mai
     }
 
     override fun onClickGankItemGirl(gank: Gank, viewImage: View, viewText: View) {
+        GirlDetailActivity.gotoGirlDetail(this,gank.url,DateUtil.toDate(gank.publishedAt!!),viewImage,viewText)
     }
 
     override fun onClickGankItemNormal(gank: Gank, view: View) {
+        WebActivity.gotoWebActivity(mContext,gank.url,gank.desc)
     }
 
-
     override fun fillData(data: ArrayList<Gank>) {
-        mAdapter?.updateWithClear(data)
+        mAdapter.updateWithClear(data)
     }
 
     override fun appendMoreDataToView(data: ArrayList<Gank>) {
-        mAdapter?.update(data)
+        mAdapter.update(data)
     }
 
     override fun hasNoMoreData() {
         mHasMoreData = false
         Snackbar.make(mListView, R.string.no_more_gank, Snackbar.LENGTH_LONG)
                 .setAction(R.string.action_to_top) {
-                    mListView.getLayoutManager().smoothScrollToPosition(mListView, null, 0)
+                    mListView.layoutManager.smoothScrollToPosition(mListView, null, 0)
                 }.show()
     }
 

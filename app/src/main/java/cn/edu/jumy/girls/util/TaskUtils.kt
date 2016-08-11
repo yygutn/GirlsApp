@@ -17,23 +17,24 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package cn.edu.jumy.girls.util;
+package cn.edu.jumy.girls.util
 
-import android.os.AsyncTask;
-import android.os.Build;
+import android.os.AsyncTask
+import android.os.Build
 
 /**
  * Created by drak11t on 8/16/14.
  */
-public class TaskUtils {
+class TaskUtils {
 
-    @SafeVarargs public static <Params, Progress, Result> void executeAsyncTask(
-        AsyncTask<Params, Progress, Result> task, Params... params) {
-        if (Build.VERSION.SDK_INT >= 11) {
-            task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, params);
-        }
-        else {
-            task.execute(params);
+    companion object {
+        @SafeVarargs fun <Params, Progress, Result> executeAsyncTask(
+                task: AsyncTask<Params, Progress, Result>, vararg params: Params) {
+            if (Build.VERSION.SDK_INT >= 11) {
+                task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, *params)
+            } else {
+                task.execute(*params)
+            }
         }
     }
 }

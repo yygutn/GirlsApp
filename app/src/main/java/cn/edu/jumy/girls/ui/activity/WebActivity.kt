@@ -35,9 +35,12 @@ class WebActivity:BaseRefreshMvpActivity<IWebView,WebPresenter>(),IWebView{
         }
     }
 
+    override fun getLayout(): Int {
+        return R.layout.activity_web
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_web)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
