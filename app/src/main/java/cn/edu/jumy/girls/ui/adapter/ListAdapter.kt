@@ -11,6 +11,7 @@ import cn.edu.jumy.girls.common.baseAdapter.recyclerview.CommonAdapter
 import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ViewHolder
 import cn.edu.jumy.girls.data.entity.Girl
 import cn.edu.jumy.girls.ui.widget.RatioImageView
+import cn.edu.jumy.girls.util.DateUtil
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import java.util.*
@@ -33,21 +34,24 @@ class ListAdapter : CommonAdapter<Girl> {
         mColorFilter = ColorMatrixColorFilter(ColorMatrix(array))
     }
 
-    override fun convert(viewHolder: ViewHolder, item: Girl, position: Int) {
-        val imageView:RatioImageView = viewHolder.getView<RatioImageView>(R.id.iv_index_photo)
+    override fun convert(holder: ViewHolder, item: Girl, position: Int) {
+        val imageView: RatioImageView = holder.getView<RatioImageView>(R.id.iv_index_photo)
         Picasso.with(mContext)
-        .load(item.url)
-        .into(imageView, object : Callback {
-            override fun onSuccess() {
-                imageView.setColorFilter(mColorFilter)
-            }
+                .load(item.url)
+                .centerCrop()
+                .resize(200,200)
+                .into(imageView, object : Callback {
+                    override fun onSuccess() {
+                        imageView.colorFilter = mColorFilter
+                    }
 
-            override fun onError() {
-            }
-        })
+                    override fun onError() {
+                    }
+                })
+        holder.setText(R.id.tv_time, DateUtil.toDate(item.publishedAt!!))
         if (mIClickItem != null) {
             imageView.setOnClickListener(View.OnClickListener {
-                mIClickItem!!.onClickPhoto(position, imageView, viewHolder.getView(R.id.tv_time))
+                mIClickItem!!.onClickPhoto(position, imageView, holder.getView(R.id.tv_time))
             })
         }
     }

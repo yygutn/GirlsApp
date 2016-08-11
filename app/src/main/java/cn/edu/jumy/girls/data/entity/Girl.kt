@@ -13,6 +13,6 @@ class Girl : Soul() {
     var who: String = ""
     var desc: String = ""
     var createdAt: Date? = null
-    var publishedAt: Date? = null
+    var publishedAt: Date = Date()
     var updatedAt: Date? = null
 }

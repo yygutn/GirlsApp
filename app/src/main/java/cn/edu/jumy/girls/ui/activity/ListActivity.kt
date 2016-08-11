@@ -23,10 +23,16 @@ import java.util.*
 class ListActivity:BaseRefreshMvpActivity<ListViewView<Girl>,ListPresenter>(),ListViewView<Girl>,ListAdapter.IClickItem{
 
 
-    private var mAdapter: ListAdapter = ListAdapter(mContext,R.layout.index_item, ArrayList())
+    private lateinit var mAdapter: ListAdapter
     private var mHasMoreData = true
+    private lateinit var mListView: RecyclerView
     override fun getLayout(): Int {
         return R.layout.activity_view_list
+    }
+
+    override fun viewBinding() {
+        super.viewBinding()
+        mListView = findViewById(R.id.mListView) as RecyclerView
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +42,13 @@ class ListActivity:BaseRefreshMvpActivity<ListViewView<Girl>,ListPresenter>(),Li
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
-        presenter.refillGirls()
+        getPresenter().refillGirls()
     }
 
     private fun initRecycleView() {
         val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         mListView.layoutManager = layoutManager
+        mAdapter = ListAdapter(this,R.layout.index_item, ArrayList())
         mAdapter.setIClickItem(this)
         mListView.adapter = mAdapter
 
@@ -91,7 +98,7 @@ class ListActivity:BaseRefreshMvpActivity<ListViewView<Girl>,ListPresenter>(),Li
         mHasMoreData = false
         Snackbar.make(mListView, R.string.no_more_girls, Snackbar.LENGTH_SHORT)
                 .setAction(R.string.action_to_top) {
-                    mListView.getLayoutManager().smoothScrollToPosition(mListView, null, 0)
+                    mListView.layoutManager.smoothScrollToPosition(mListView, null, 0)
                 }.show()
     }
     override fun onClickPhoto(position: Int, view: View, textView: View) {

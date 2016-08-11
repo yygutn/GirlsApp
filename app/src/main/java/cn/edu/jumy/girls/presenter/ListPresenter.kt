@@ -63,7 +63,7 @@ class ListPresenter : MvpBasePresenter<ListViewView<Girl>> {
                     Observable.from(girls)
                 }
                 .toSortedList(Func2<Girl, Girl, Int> { girl, girl2 ->
-                    girl2.publishedAt!!.compareTo(girl.publishedAt!!)
+                    girl2.publishedAt.compareTo(girl.publishedAt)
                 })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ girls ->
@@ -99,7 +99,7 @@ class ListPresenter : MvpBasePresenter<ListViewView<Girl>> {
                     Observable.from(girls)
                 })
                 .toSortedList(Func2<Girl, Girl, Int> { girl1, girl2 ->
-                    girl2.publishedAt?.compareTo(girl1.publishedAt)
+                    girl2.publishedAt.compareTo(girl1.publishedAt)
                 })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ girls ->
