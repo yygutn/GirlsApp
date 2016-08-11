@@ -7,8 +7,9 @@ import android.widget.BaseAdapter
 
 import cn.edu.jumy.girls.common.baseAdapter.abslistview.base.ItemViewDelegate
 import cn.edu.jumy.girls.common.baseAdapter.abslistview.base.ItemViewDelegateManager
+import java.util.*
 
-open class MultiItemTypeAdapter<T>(protected var mContext: Context, protected var mDatas: List<T>) : BaseAdapter() {
+open class MultiItemTypeAdapter<T>(protected var mContext: Context, protected var mList: ArrayList<T>) : BaseAdapter() {
 
     private val mItemViewDelegateManager: ItemViewDelegateManager<T>
 
@@ -34,14 +35,14 @@ open class MultiItemTypeAdapter<T>(protected var mContext: Context, protected va
 
     override fun getItemViewType(position: Int): Int {
         if (useItemViewDelegateManager()) {
-            val viewType = mItemViewDelegateManager.getItemViewType(mDatas[position], position)
+            val viewType = mItemViewDelegateManager.getItemViewType(mList[position], position)
             return viewType
         }
         return super.getItemViewType(position)
     }
 
     override fun getView(position: Int, convertView: View, parent: ViewGroup): View {
-        val layoutId = mItemViewDelegateManager.getItemViewLayoutId(mDatas[position], position)
+        val layoutId = mItemViewDelegateManager.getItemViewLayoutId(mList[position], position)
 
         val viewHolder = ViewHolder[mContext, convertView, parent, layoutId, position]
         convert(viewHolder, getItem(position), position)
@@ -53,11 +54,11 @@ open class MultiItemTypeAdapter<T>(protected var mContext: Context, protected va
     }
 
     override fun getCount(): Int {
-        return mDatas.size
+        return mList.size
     }
 
     override fun getItem(position: Int): T {
-        return mDatas[position]
+        return mList[position]
     }
 
     override fun getItemId(position: Int): Long {

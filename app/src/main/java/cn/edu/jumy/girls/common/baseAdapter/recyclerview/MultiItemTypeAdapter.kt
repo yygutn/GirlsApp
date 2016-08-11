@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ItemViewDelegate
 import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ItemViewDelegateManager
 import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ViewHolder
+import java.util.*
 
 /**
  * Created by zhy on 16/4/9.
  */
-open class MultiItemTypeAdapter<T>(protected var mContext: Context, datas: List<T>) : RecyclerView.Adapter<ViewHolder>() {
-    var datas: List<T>
+open class MultiItemTypeAdapter<T>(protected var mContext: Context, datas: ArrayList<T>) : RecyclerView.Adapter<ViewHolder>() {
+    var mList: ArrayList<T>
         protected set
 
     protected var mItemViewDelegateManager: ItemViewDelegateManager<T>
@@ -21,13 +22,13 @@ open class MultiItemTypeAdapter<T>(protected var mContext: Context, datas: List<
 
 
     init {
-        this.datas = datas
+        this.mList = datas
         mItemViewDelegateManager = ItemViewDelegateManager()
     }
 
     override fun getItemViewType(position: Int): Int {
         if (!useItemViewDelegateManager()) return super.getItemViewType(position)
-        return mItemViewDelegateManager.getItemViewType(datas[position], position)
+        return mItemViewDelegateManager.getItemViewType(mList[position], position)
     }
 
 
@@ -52,25 +53,25 @@ open class MultiItemTypeAdapter<T>(protected var mContext: Context, datas: List<
         viewHolder.convertView.setOnClickListener { v ->
             if (mOnItemClickListener != null) {
                 val position = viewHolder.adapterPosition
-                mOnItemClickListener!!.onItemClick(v, viewHolder, datas[position], position)
+                mOnItemClickListener!!.onItemClick(v, viewHolder, mList[position], position)
             }
         }
 
         viewHolder.convertView.setOnLongClickListener(View.OnLongClickListener { v ->
             if (mOnItemClickListener != null) {
                 val position = viewHolder.adapterPosition
-                return@OnLongClickListener mOnItemClickListener!!.onItemLongClick(v, viewHolder, datas[position], position)
+                return@OnLongClickListener mOnItemClickListener!!.onItemLongClick(v, viewHolder, mList[position], position)
             }
             false
         })
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        convert(holder, datas[position])
+        convert(holder, mList[position])
     }
 
     override fun getItemCount(): Int {
-        val itemCount = datas.size
+        val itemCount = mList.size
         return itemCount
     }
 

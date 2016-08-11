@@ -3,10 +3,11 @@ package cn.edu.jumy.girls.common.baseAdapter.abslistview
 import android.content.Context
 
 import cn.edu.jumy.girls.common.baseAdapter.abslistview.base.ItemViewDelegate
+import java.util.*
 
 abstract class CommonAdapter<T>(mContext: Context,
                                 mLayoutId: Int,
-                                mDatas: List<T>) : MultiItemTypeAdapter<T>(mContext, mDatas) {
+                                mDatas: ArrayList<T>) : MultiItemTypeAdapter<T>(mContext, mDatas) {
 
     init {
 

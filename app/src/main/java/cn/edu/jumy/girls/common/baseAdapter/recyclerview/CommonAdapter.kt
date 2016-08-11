@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 
 import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ItemViewDelegate
 import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ViewHolder
+import java.util.*
 
 /**
  * Created by zhy on 16/4/9.
  */
 open abstract class CommonAdapter<T>(mContext: Context,
                                 mLayoutId: Int,
-                                mDatas: List<T>) : MultiItemTypeAdapter<T>(mContext, mDatas) {
+                                mDatas: ArrayList<T>) : MultiItemTypeAdapter<T>(mContext, mDatas) {
     protected var mInflater: LayoutInflater
 
     init {

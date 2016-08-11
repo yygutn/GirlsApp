@@ -1,8 +1,10 @@
 package cn.edu.jumy.girls.common.base
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
 import android.widget.Toast
 import cn.edu.jumy.girls.BuildConfig
 import com.orhanobut.logger.Logger
@@ -18,7 +20,18 @@ open class BaseActivity : AppCompatActivity() {
         AppManager.getInstance().addActivity(this)
     }
 
-    fun AppCompatActivity.showToast(string: String) {
+    protected open fun getMenuRes(): Int {
+        return -1
+    };
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        if (getMenuRes() > 0) {
+            menuInflater.inflate(getMenuRes(), menu)
+        }
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    public fun Activity.showToast(string: String) {
         Toast.makeText(this, string, Toast.LENGTH_SHORT).show()
     }
 
