@@ -2,8 +2,6 @@ package cn.edu.jumy.girls.ui.activity
 
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
-import butterknife.BindView
-import butterknife.ButterKnife
 import cn.edu.jumy.girls.R
 import cn.edu.jumy.girls.common.base.BaseMvpActivity
 import cn.edu.jumy.girls.ui.view.BaseRefreshView

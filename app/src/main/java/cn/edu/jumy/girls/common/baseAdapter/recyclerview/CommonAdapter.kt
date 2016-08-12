@@ -7,9 +7,7 @@ import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ItemViewDelegate
 import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ViewHolder
 import java.util.*
 
-/**
- * Created by zhy on 16/4/9.
- */
+
 open abstract class CommonAdapter<T>(mContext: Context,
                                 mLayoutId: Int,
                                 mDatas: ArrayList<T>) : MultiItemTypeAdapter<T>(mContext, mDatas) {

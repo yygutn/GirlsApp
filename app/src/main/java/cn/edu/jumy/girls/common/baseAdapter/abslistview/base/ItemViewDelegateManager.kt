@@ -4,9 +4,6 @@ import android.support.v4.util.SparseArrayCompat
 
 import cn.edu.jumy.girls.common.baseAdapter.abslistview.ViewHolder
 
-/**
- * Created by zhy on 16/6/22.
- */
 class ItemViewDelegateManager<T> {
     internal var delegates: SparseArrayCompat<ItemViewDelegate<T>> = SparseArrayCompat()
 

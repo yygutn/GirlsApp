@@ -10,9 +10,6 @@ import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ItemViewDelegateMa
 import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ViewHolder
 import java.util.*
 
-/**
- * Created by zhy on 16/4/9.
- */
 open class MultiItemTypeAdapter<T>(protected var mContext: Context, datas: ArrayList<T>) : RecyclerView.Adapter<ViewHolder>() {
     var mList: ArrayList<T>
         protected set

@@ -35,7 +35,7 @@ class DialogPresenter : MvpBasePresenter<MvpView>{
             args.putString(EXTRA_DIALOG_TITLE, dialogTitle)
             args.putString(EXTRA_HTML_FILE_NAME, htmlFileName)
             args.putInt(EXTRA_ACCENT_COLOR, accentColor)
-            dialog.setArguments(args)
+            dialog.arguments = args
             return dialog
         }
     }
@@ -98,7 +98,10 @@ class DialogPresenter : MvpBasePresenter<MvpView>{
             bufferedReader.close()
 
             val formatLodString = buf.toString().replace("{style-placeholder}", "body { background-color: #ffffff; color: #000; }").replace("{link-color}", colorToHex(shiftColor(accentColor, true))).replace("{link-color-active}", colorToHex(accentColor))
-            webView.loadDataWithBaseURL(null, formatLodString, "text/html", KEY_UTF_8, null)
+//            webView.loadData(formatLodString,"text/html", KEY_UTF_8)
+//            webView.loadDataWithBaseURL(null, formatLodString, "text/html", KEY_UTF_8, null)
+            webView.loadUrl("file:///android_asset/$htmlFileName")
+            webView.reload()
         } catch (e: Throwable) {
             webView.loadData("<h1>Unable to load</h1><p>" + e.message + "</p>", "text/html", KEY_UTF_8)
         }

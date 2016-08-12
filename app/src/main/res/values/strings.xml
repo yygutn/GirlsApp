@@ -2,9 +2,9 @@
     <string name="app_name">Girls</string>
 
     <string name="action_settings">Settings</string>
-    <string name="action_about">关于GankDaily</string>
+    <string name="action_about">关于GirlsApp</string>
     <string name="action_about_gank">关于干货集中营</string>
-    <string name="action_github_tending">Github Tending</string>
+    <string name="action_github_tending">Github_yygutn</string>
     <string name="action_save">保存</string>
     <string name="title_activity_girl_detail">GirlDetailActivity</string>
     <string name="title_activity_view_list">妹子们</string>
@@ -22,7 +22,7 @@
     <string name="picture_save_fail">图片保存失败，请再次尝试保存！</string>
     <string name="picture_has_save_to">图片已保存至 %s 文件夹</string>
 
-    <string name="action_github_yygutn">GitHub Trending</string>
+    <string name="action_github_yygutn">GitHub_yygutn</string>
     <string name="action_github_issue">Opinion</string>
     <string name="url_github_yygutn">https://github.com/yygutn</string>
     <string name="url_github_issue">https://github.com/yygutn/GirlsApp/issues</string>

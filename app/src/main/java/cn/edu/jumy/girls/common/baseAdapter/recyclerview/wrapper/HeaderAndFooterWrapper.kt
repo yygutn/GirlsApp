@@ -10,9 +10,6 @@ import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ViewHolder
 import cn.edu.jumy.girls.common.baseAdapter.recyclerview.utils.WrapperUtils
 
 
-/**
- * Created by zhy on 16/6/23.
- */
 class HeaderAndFooterWrapper<T>(private val mInnerAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val mHeaderViews = SparseArrayCompat<View>()

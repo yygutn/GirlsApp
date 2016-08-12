@@ -1,7 +1,6 @@
 package cn.edu.jumy.girls.ui.activity
 
 import android.annotation.TargetApi
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -14,15 +13,12 @@ import android.transition.Transition
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
-import butterknife.BindView
 import cn.edu.jumy.girls.R
 import cn.edu.jumy.girls.common.base.BaseMvpActivity
 import cn.edu.jumy.girls.presenter.GirlDetailPresenter
 import cn.edu.jumy.girls.ui.view.GirlDetailView
 import cn.edu.jumy.girls.util.AndroidUtils
-import cn.edu.jumy.girls.util.ToastUtils
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.toolbar.*
 import uk.co.senab.photoview.PhotoViewAttacher
 
 /**

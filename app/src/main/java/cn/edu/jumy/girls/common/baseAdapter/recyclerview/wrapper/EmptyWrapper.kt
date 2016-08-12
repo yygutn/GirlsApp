@@ -9,9 +9,6 @@ import cn.edu.jumy.girls.common.baseAdapter.recyclerview.base.ViewHolder
 import cn.edu.jumy.girls.common.baseAdapter.recyclerview.utils.WrapperUtils
 
 
-/**
- * Created by zhy on 16/6/23.
- */
 class EmptyWrapper<T>(private val mInnerAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var mEmptyView: View? = null
     private var mEmptyLayoutId: Int = 0

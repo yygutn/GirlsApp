@@ -47,7 +47,7 @@ class MainAdapter : MultiItemTypeAdapter<Gank> {
         if (gank.is妹子()) {
             return EItemType.ITEM_TYPE_GIRL.ordinal
         } else if (gank.isHeader) {
-            return EItemType.ITEM_TYPE_CATEGOTY.ordinal
+            return EItemType.ITEM_TYPE_CATEGORY.ordinal
         } else {
             return EItemType.ITEM_TYPE_NORMAL.ordinal
         }
@@ -58,7 +58,7 @@ class MainAdapter : MultiItemTypeAdapter<Gank> {
         if (viewType == EItemType.ITEM_TYPE_GIRL.ordinal) {
             itemView = LayoutInflater.from(mContext).inflate(R.layout.gank_item_girl,null)
             return ViewHolder.createViewHolder(mContext, itemView)
-        } else if (viewType == EItemType.ITEM_TYPE_CATEGOTY.ordinal) {
+        } else if (viewType == EItemType.ITEM_TYPE_CATEGORY.ordinal) {
             itemView = LayoutInflater.from(mContext).inflate(R.layout.gank_item_category,null)
             return ViewHolder.createViewHolder(mContext, itemView)
         } else {
@@ -81,17 +81,17 @@ class MainAdapter : MultiItemTypeAdapter<Gank> {
                     .load(item.url)
                     .into(img, object : Callback {
                         override fun onSuccess() {
-                            img.setColorFilter(mColorFilter)
+                            img.colorFilter = mColorFilter
                         }
 
                         override fun onError() {
                         }
                     })
-            holder.setOnClickListener(R.id.tv_video_name, View.OnClickListener {
-                mIClickItem?.onClickGankItemGirl(item,img,holder.getView(R.id.tv_video_name))
+            holder.setOnClickListener(R.id.iv_index_photo, View.OnClickListener { view->
+                mIClickItem?.onClickGankItemGirl(item,img,view)
             })
 
-        } else if (viewType == EItemType.ITEM_TYPE_CATEGOTY.ordinal) {
+        } else if (viewType == EItemType.ITEM_TYPE_CATEGORY.ordinal) {
             holder.setText(R.id.tv_category,item.type)
         } else if (viewType == EItemType.ITEM_TYPE_NORMAL.ordinal) {
             holder.setText(R.id.tv_gank_title,StringStyleUtils.getGankInfoSequence(mContext,item).toString())
@@ -108,7 +108,7 @@ class MainAdapter : MultiItemTypeAdapter<Gank> {
     private enum class EItemType {
         ITEM_TYPE_GIRL,
         ITEM_TYPE_NORMAL,
-        ITEM_TYPE_CATEGOTY
+        ITEM_TYPE_CATEGORY
     }
 
     /**

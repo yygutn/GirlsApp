@@ -2,10 +2,6 @@ package cn.edu.jumy.girls.common.baseAdapter.recyclerview.base
 
 import android.support.v4.util.SparseArrayCompat
 
-
-/**
- * Created by zhy on 16/6/22.
- */
 class ItemViewDelegateManager<T> {
     internal var delegates: SparseArrayCompat<ItemViewDelegate<T>> = SparseArrayCompat()
 

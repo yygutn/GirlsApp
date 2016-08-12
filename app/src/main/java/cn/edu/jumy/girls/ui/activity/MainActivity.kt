@@ -1,19 +1,13 @@
 package cn.edu.jumy.girls.ui.activity
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
-import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
-import butterknife.BindView
-import butterknife.ButterKnife
-
 import cn.edu.jumy.girls.R
 import cn.edu.jumy.girls.data.entity.Gank
 import cn.edu.jumy.girls.presenter.MainPresenter
@@ -23,12 +17,12 @@ import cn.edu.jumy.girls.util.DateUtil
 import cn.edu.jumy.girls.util.DialogUtil
 import java.util.*
 
-class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(),MainAdapter.IClickMainItem,MainView<Gank> {
+class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(), MainAdapter.IClickMainItem, MainView<Gank> {
 
 
     private var mHasMoreData = true
     private var mList: ArrayList<Gank> = ArrayList()
-    private var mAdapter:MainAdapter = MainAdapter(this,mList)
+    private var mAdapter: MainAdapter = MainAdapter(this, mList)
 
     private lateinit var mListView: RecyclerView
 
@@ -43,7 +37,6 @@ class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(),Mai
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ButterKnife.bind(this)
         initRecycleView()
         setTitle(getString(R.string.app_name), false)
         getPresenter().checkVersionInfo()
@@ -53,7 +46,7 @@ class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(),Mai
         super.onPostCreate(savedInstanceState)
         Handler().postDelayed(Runnable {
             showRefresh()
-        },600)
+        }, 600)
         getData()
     }
 
@@ -68,7 +61,6 @@ class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(),Mai
     override fun showErrorView(throwable: Throwable) {
         throwable.printStackTrace()
     }
-
 
 
     override fun prepareRefresh(): Boolean {
@@ -102,6 +94,7 @@ class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(),Mai
     private fun getData() {
         getPresenter().getData(Date(System.currentTimeMillis()))
     }
+
     private fun initRecycleView() {
         val layoutManager = LinearLayoutManager(this)
         mListView.layoutManager = layoutManager
@@ -123,11 +116,11 @@ class MainActivity : BaseRefreshMvpActivity<MainView<Gank>, MainPresenter>(),Mai
     }
 
     override fun onClickGankItemGirl(gank: Gank, viewImage: View, viewText: View) {
-        GirlDetailActivity.gotoGirlDetail(this,gank.url,DateUtil.toDate(gank.publishedAt!!),viewImage,viewText)
+        GirlDetailActivity.gotoGirlDetail(this, gank.url, DateUtil.toDate(gank.publishedAt!!), viewImage, viewText)
     }
 
     override fun onClickGankItemNormal(gank: Gank, view: View) {
-        WebActivity.gotoWebActivity(mContext,gank.url,gank.desc)
+        WebActivity.gotoWebActivity(mContext, gank.url, gank.desc)
     }
 
     override fun fillData(data: ArrayList<Gank>) {

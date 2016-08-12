@@ -14,9 +14,10 @@ import com.hannesdorfmann.mosby.mvp.MvpBasePresenter
  * Created by Jumy on 16/8/11 16:00.
  * Copyright (c) 2016, yygutn@gmail.com All Rights Reserved.
  */
-class WebPresenter :MvpBasePresenter<IWebView>{
-    var mContext:Context
-    constructor(context: Context) : super(){
+class WebPresenter : MvpBasePresenter<IWebView> {
+    var mContext: Context
+
+    constructor(context: Context) : super() {
         mContext = context
     }
 
@@ -27,11 +28,14 @@ class WebPresenter :MvpBasePresenter<IWebView>{
         settings.setAppCacheEnabled(true)
         settings.layoutAlgorithm = WebSettings.LayoutAlgorithm.SINGLE_COLUMN
         settings.setSupportZoom(true)
-        webView.setWebViewClient(LoveClient())
+        webView.setWebViewClient(JClient())
     }
 
-    private inner class LoveClient : WebViewClient() {
+    fun loadUrl(webView: WebView, url: String) {
+        webView.loadUrl(url)
+    }
 
+    inner class JClient : WebViewClient() {
         override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
             if (TextUtils.isEmpty(url)) {
                 return true
@@ -42,21 +46,20 @@ class WebPresenter :MvpBasePresenter<IWebView>{
             view.loadUrl(url)
             return true
         }
-
-        override fun onPageStarted(view: WebView, url: String, favicon: Bitmap) {
-            super.onPageStarted(view, url, favicon)
+        override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
             getView()?.showRefresh()
+            super.onPageStarted(view, url, favicon)
         }
 
-        override fun onPageFinished(view: WebView, url: String) {
-            super.onPageFinished(view, url)
+        override fun onReceivedError(view: WebView?, errorCode: Int, description: String?, failingUrl: String?) {
             getView()?.hideRefresh()
-        }
-
-        override fun onReceivedError(view: WebView, errorCode: Int, description: String, failingUrl: String) {
+            getView()?.showLoadErrorMessage(description!!)
             super.onReceivedError(view, errorCode, description, failingUrl)
+        }
+
+        override fun onPageFinished(view: WebView?, url: String?) {
             getView()?.hideRefresh()
-            getView()?.showLoadErrorMessage(description)
+            super.onPageFinished(view, url)
         }
     }
 }

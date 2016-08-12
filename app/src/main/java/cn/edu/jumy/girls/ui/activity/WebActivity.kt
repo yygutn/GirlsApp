@@ -5,11 +5,11 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.text.TextUtils
 import android.view.KeyEvent
 import android.view.MenuItem
 import android.webkit.WebView
 import android.widget.Toast
-import butterknife.BindView
 import cn.edu.jumy.girls.R
 import cn.edu.jumy.girls.presenter.WebPresenter
 import cn.edu.jumy.girls.ui.view.IWebView
@@ -19,12 +19,11 @@ import cn.edu.jumy.girls.util.AndroidUtils
  * Created by Jumy on 16/8/11 16:04.
  * Copyright (c) 2016, yygutn@gmail.com All Rights Reserved.
  */
-class WebActivity:BaseRefreshMvpActivity<IWebView,WebPresenter>(),IWebView{
+class WebActivity : BaseRefreshMvpActivity<IWebView, WebPresenter>(), IWebView {
 
-    @BindView(R.id.wb_content)
     lateinit var mWbContent: WebView
-    
-    companion object{
+
+    companion object {
         private val EXTRA_URL = "URL"
         private val EXTRA_TITLE = "TITLE"
         fun gotoWebActivity(context: Context, url: String, title: String) {
@@ -35,22 +34,45 @@ class WebActivity:BaseRefreshMvpActivity<IWebView,WebPresenter>(),IWebView{
         }
     }
 
+
+    override fun createPresenter(): WebPresenter {
+        return WebPresenter(mContext)
+    }
+
     override fun getLayout(): Int {
         return R.layout.activity_web
     }
 
+    override fun viewBinding() {
+        super.viewBinding()
+        mWbContent = findViewById(R.id.wb_content) as WebView
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val url = intent.getStringExtra(EXTRA_URL)
+        val title = intent.getStringExtra(EXTRA_TITLE)
+
+        if (!TextUtils.isEmpty(title)) {
+            setTitle(title, true)
+        }
+        getPresenter().setUpView(mWbContent)
+        getPresenter().loadUrl(mWbContent, url)
+    }
+
+
+    override fun getMenuRes(): Int {
+        return R.menu.menu_web
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when(item?.itemId){
-            R.id.action_copy_url->{
+        when (item?.itemId) {
+            R.id.action_copy_url -> {
                 val copyDone = getString(R.string.toast_copy_done)
                 AndroidUtils.copyToClipBoard(this, mWbContent.url, copyDone)
                 return true
             }
-            R.id.action_open_url->{
+            R.id.action_open_url -> {
                 val intent = Intent()
                 intent.action = Intent.ACTION_VIEW
                 val uri = Uri.parse(mWbContent.url)
@@ -66,24 +88,20 @@ class WebActivity:BaseRefreshMvpActivity<IWebView,WebPresenter>(),IWebView{
         return super.onOptionsItemSelected(item)
     }
 
-    override fun getMenuRes(): Int {
-        return R.menu.menu_web
-    }
-
     private fun refresh() {
         mWbContent.reload()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        if (mWbContent != null){
+        if (mWbContent != null) {
             mWbContent.destroy()
         }
     }
 
     override fun onPause() {
         super.onPause()
-        if (mWbContent != null){
+        if (mWbContent != null) {
             mWbContent.onPause()
         }
     }
@@ -100,11 +118,7 @@ class WebActivity:BaseRefreshMvpActivity<IWebView,WebPresenter>(),IWebView{
         refresh()
     }
 
-    override fun createPresenter(): WebPresenter {
-        return WebPresenter(mContext)
-    }
-
-    override  fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK && mWbContent.canGoBack()) {
             mWbContent.goBack()
             return true

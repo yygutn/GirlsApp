@@ -1,9 +1,6 @@
 package cn.edu.jumy.girls.common.baseAdapter.recyclerview.base
 
 
-/**
- * Created by zhy on 16/6/22.
- */
 interface ItemViewDelegate<T> {
 
     val itemViewLayoutId: Int

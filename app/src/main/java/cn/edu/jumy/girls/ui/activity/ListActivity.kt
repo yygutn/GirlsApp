@@ -5,7 +5,6 @@ import android.support.design.widget.Snackbar
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.View
-import butterknife.BindView
 import cn.edu.jumy.girls.R
 import cn.edu.jumy.girls.data.entity.Gank
 import cn.edu.jumy.girls.data.entity.Girl
@@ -13,14 +12,13 @@ import cn.edu.jumy.girls.presenter.ListPresenter
 import cn.edu.jumy.girls.ui.adapter.ListAdapter
 import cn.edu.jumy.girls.ui.view.ListViewView
 import cn.edu.jumy.girls.util.DateUtil
-import kotlinx.android.synthetic.main.activity_view_list.*
 import java.util.*
 
 /**
  * Created by Jumy on 16/8/11 16:23.
  * Copyright (c) 2016, yygutn@gmail.com All Rights Reserved.
  */
-class ListActivity:BaseRefreshMvpActivity<ListViewView<Girl>,ListPresenter>(),ListViewView<Girl>,ListAdapter.IClickItem{
+class ListActivity : BaseRefreshMvpActivity<ListViewView<Girl>, ListPresenter>(), ListViewView<Girl>, ListAdapter.IClickItem {
 
 
     private lateinit var mAdapter: ListAdapter
@@ -34,9 +32,10 @@ class ListActivity:BaseRefreshMvpActivity<ListViewView<Girl>,ListPresenter>(),Li
         super.viewBinding()
         mListView = findViewById(R.id.mListView) as RecyclerView
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTitle("妹子们",true)
+        setTitle("妹子们", true)
         initRecycleView()
     }
 
@@ -48,7 +47,7 @@ class ListActivity:BaseRefreshMvpActivity<ListViewView<Girl>,ListPresenter>(),Li
     private fun initRecycleView() {
         val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         mListView.layoutManager = layoutManager
-        mAdapter = ListAdapter(this,R.layout.index_item, ArrayList())
+        mAdapter = ListAdapter(this, R.layout.index_item, ArrayList())
         mAdapter.setIClickItem(this)
         mListView.adapter = mAdapter
 
@@ -63,6 +62,7 @@ class ListActivity:BaseRefreshMvpActivity<ListViewView<Girl>,ListPresenter>(),Li
             }
         })
     }
+
     override fun createPresenter(): ListPresenter {
         return ListPresenter(mContext)
     }
@@ -101,6 +101,7 @@ class ListActivity:BaseRefreshMvpActivity<ListViewView<Girl>,ListPresenter>(),Li
                     mListView.layoutManager.smoothScrollToPosition(mListView, null, 0)
                 }.show()
     }
+
     override fun onClickPhoto(position: Int, view: View, textView: View) {
         val clickGirl = mAdapter.getGirl(position)
         if (clickGirl != null) {

@@ -4,12 +4,9 @@ import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.widget.Toast
-import butterknife.BindView
-import butterknife.ButterKnife
 import cn.edu.jumy.girls.BuildConfig
 import cn.edu.jumy.girls.R
 import com.hannesdorfmann.mosby.mvp.MvpActivity

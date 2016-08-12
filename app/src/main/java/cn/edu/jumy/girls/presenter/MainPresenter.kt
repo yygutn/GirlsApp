@@ -126,6 +126,8 @@ class MainPresenter : MvpBasePresenter<MainView<Gank>> {
                         view?.appendMoreDataToView(list)
                     }
                     view?.getDataFinish()
+                },{ e->
+                    Logger.e(e.toString())
                 }, {
                     // after get data complete, need put off time one day
                     mCurrentDate = Date(mCurrentDate.time - DAY_OF_MILLISECOND)

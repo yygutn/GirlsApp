@@ -35,8 +35,8 @@ import cn.edu.jumy.girls.util.DialogUtil
 import com.hannesdorfmann.mosby.mvp.MvpView
 
 class WebViewDialog : DialogFragment(), MvpView {
-    var mPresenter: DialogPresenter? = null
-    var mWebView: WebView? = null
+    lateinit var mPresenter: DialogPresenter
+    lateinit var mWebView: WebView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mPresenter = DialogPresenter(activity)
@@ -47,12 +47,12 @@ class WebViewDialog : DialogFragment(), MvpView {
         try {
             customView = LayoutInflater.from(activity).inflate(R.layout.dialog_webview, null)
             mWebView = customView.findViewById(R.id.webview) as WebView
-            mWebView!!.addJavascriptInterface(WebAppInterface(customView.context), "Android")
+            mWebView.addJavascriptInterface(WebAppInterface(customView.context), "Android")
         } catch (e: InflateException) {
             throw IllegalStateException("This device does not support Web Views.")
         }
 
-        return mPresenter!!.makeOkDialog(this, customView)
+        return mPresenter.makeOkDialog(this, customView)
     }
 
     inner class WebAppInterface

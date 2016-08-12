@@ -4,9 +4,6 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
 
-/**
- * Created by zhy on 16/6/28.
- */
 class WrapperUtils {
     open interface SpanSizeCallback {
         fun getSpanSize(layoutManager: GridLayoutManager, oldLookup: GridLayoutManager.SpanSizeLookup, position: Int): Int
