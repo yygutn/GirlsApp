@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="cn.edu.jumy.girls">
+    package="cn.edu.jumy.girls">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".common.GirlsApp"
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- ATTENTION: This data URL was auto-generated. We recommend that you use the HTTP scheme.-->
+                <data
+                    android:host="www.github.com"
+                    android:pathPrefix="/yygutn"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.activity.GirlDetailActivity"/>
-        <activity android:name=".ui.activity.ListActivity"/>
-        <activity android:name=".ui.activity.WebActivity"/>
+        <activity android:name=".ui.activity.GirlDetailActivity" />
+        <activity android:name=".ui.activity.ListActivity" />
+        <activity android:name=".ui.activity.WebActivity" />
     </application>
 
 </manifest>
