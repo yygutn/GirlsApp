@@ -11,7 +11,7 @@ import com.hannesdorfmann.mosby.mvp.MvpBasePresenter
  * Created by Jumy on 16/8/11 12:36.
  * Copyright (c) 2016, yygutn@gmail.com All Rights Reserved.
  */
-open abstract class BaseRefreshMvpActivity<V : BaseRefreshView, P : MvpBasePresenter<V>> : BaseMvpActivity<V, P>(), BaseRefreshView {
+abstract class BaseRefreshMvpActivity<V : BaseRefreshView, P : MvpBasePresenter<V>> : BaseMvpActivity<V, P>(), BaseRefreshView {
 
 
     lateinit var mSwipeRefreshLayout: SwipeRefreshLayout

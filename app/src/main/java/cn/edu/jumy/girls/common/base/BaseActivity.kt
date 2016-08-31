@@ -22,7 +22,7 @@ open class BaseActivity : AppCompatActivity() {
 
     protected open fun getMenuRes(): Int {
         return -1
-    };
+    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         if (getMenuRes() > 0) {

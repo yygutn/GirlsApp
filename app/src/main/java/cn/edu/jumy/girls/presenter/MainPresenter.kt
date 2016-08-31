@@ -30,8 +30,6 @@ class MainPresenter : MvpBasePresenter<MainView<Gank>> {
         val mService = GirlsRetrofit.instance.mService
     }
 
-    private var subscriptions = CompositeSubscription()
-
     var mContext: Context
 
     constructor(mContext: Context) : super() {
@@ -68,7 +66,7 @@ class MainPresenter : MvpBasePresenter<MainView<Gank>> {
         val day = calendar.get(Calendar.DAY_OF_MONTH)
         mService.getGankData(year, month, day)
                 .subscribeOn(Schedulers.newThread())
-                .observeOn(Schedulers.newThread())
+                .observeOn(Schedulers.io())
                 .map { gankData ->
                     gankData.results
                 }
